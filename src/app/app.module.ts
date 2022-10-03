@@ -1,27 +1,24 @@
+import { AuthService } from './core/guards/auth/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PoModule } from '@po-ui/ng-components';
-import { RouterModule } from '@angular/router';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
-
-import { AuthGuard } from './core/guards/auth/auth.guard';
-import { AccessGuard } from './core/guards/access/access.guard';
+import { AuthGuardService } from './core/guards/auth/auth-guard.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PoModule,
     PoTemplatesModule,
-    
   ],
-  providers: [AuthGuard, AccessGuard],
+  providers: [AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

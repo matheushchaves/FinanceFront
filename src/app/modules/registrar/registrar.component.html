@@ -1,0 +1,18 @@
+<po-page-edit
+    p-title="Registrar-se"
+    [p-disable-submit]="form.invalid"
+    (p-save)="save()">
+
+    <form [formGroup]="form">
+      <div class="po-row">
+        <po-input class="po-md-12" formControlName="nome" p-clean p-icon="po-icon-user" p-label="Nome completo"> </po-input>
+      </div>
+
+      <div class="po-row">
+        <po-email class="po-lg-6" formControlName="email" p-label="Email" p-clean> </po-email>
+        <po-password class="po-lg-3" formControlName="senha" p-label="Senha" p-clean> </po-password>
+      </div>
+
+    </form>
+
+</po-page-edit>
