@@ -1,6 +1,11 @@
 <div class="po-wrapper">
   <app-menu> </app-menu>
-  <po-toolbar p-actions-icon="po-icon-cart" p-title="Personal Manager Finance">
+  <po-toolbar
+    p-actions-icon="po-icon-user"
+    [p-profile]="profile"
+    [p-profile-actions]="profileActions"
+    p-title="Personal Manager Finance"
+  >
   </po-toolbar>
 
   <po-page-default p-title="">

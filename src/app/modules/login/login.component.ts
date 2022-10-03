@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
     this.service.login(poPageLogin.login, poPageLogin.password).subscribe(
       (response) => {
         console.log(response)
-        this.auth.setToken(response.detailedMessage)
+        this.auth.setToken(response.token)
+        this.auth.setUser(response.user)
         this.router.navigate([this.returnUrl]);
       }
     )

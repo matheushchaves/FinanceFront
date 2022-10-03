@@ -8,6 +8,7 @@ export interface IUsuario{
   nome: string,
   email: string,
   senha: string,
+  regra: string,
 }
 
 export interface IUsuarioFormGroup extends FormGroup {
