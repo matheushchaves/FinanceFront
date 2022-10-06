@@ -20,6 +20,10 @@ export class AuthService {
   public setUser(user: IUsuario):void{
     localStorage.setItem(USR, JSON.stringify(user))
   }
+  public getToken():string{
+    const token = localStorage.getItem(TKN)??"";
+    return token;
+  }
   public isAuthenticated(): boolean {
     const token = localStorage.getItem(TKN)??"";
     // Check whether the token is expired and return

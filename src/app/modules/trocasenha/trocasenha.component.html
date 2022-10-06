@@ -1,1 +1,6 @@
-<po-page-change-password></po-page-change-password>
+<po-page-change-password
+[p-hide-current-password]="true"
+p-url-back=""
+p-url-home=""
+(p-submit)="salvar($event)"
+></po-page-change-password>

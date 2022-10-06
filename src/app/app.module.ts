@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { PoModule } from '@po-ui/ng-components';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
 import { AuthGuardService } from './core/guards/auth/auth-guard.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './token-interceptor';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AuthGuardService } from './core/guards/auth/auth-guard.service';
     PoModule,
     PoTemplatesModule,
   ],
-  providers: [AuthGuardService, AuthService],
+  providers: [AuthGuardService, AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
