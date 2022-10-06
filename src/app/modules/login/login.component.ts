@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
   login(poPageLogin: PoPageLogin) {
     this.service.login(poPageLogin.login, poPageLogin.password).subscribe(
       (response) => {
-        console.log(response)
         this.auth.setToken(response.token)
         this.auth.setUser(response.user)
         this.router.navigate([this.returnUrl]);
