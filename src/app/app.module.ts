@@ -8,7 +8,7 @@ import { PoModule } from '@po-ui/ng-components';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
 import { AuthGuardService } from './core/guards/auth/auth-guard.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './token-interceptor';
+import { TokenInterceptor } from './core/request/token-interceptor';
 
 @NgModule({
   declarations: [
